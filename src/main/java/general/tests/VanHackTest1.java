@@ -75,7 +75,7 @@ class Result {
 
 }
 
-public class vanHackTest1 {
+public class VanHackTest1 {
     public static void teste() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 //        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));

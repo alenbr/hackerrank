@@ -62,7 +62,7 @@ public class GeneralTestsApplication {
 //		stringSubstrTest();
 //		lexSubstrTest();
 		try {
-			vanHackTest1.teste() ;
+			VanHackTest2.teste() ;
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
