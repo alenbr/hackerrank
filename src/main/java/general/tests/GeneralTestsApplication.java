@@ -35,7 +35,7 @@ public class GeneralTestsApplication {
 	    public void anothermethod(){  }
 	}
 	public static void main(String[] args) {
-		SpringApplication.run(GeneralTestsApplication.class, args);
+		SpringApplication.run(GeneralTestsApplication.class, args).close();;
 	}
 
 	@PostConstruct
@@ -61,7 +61,12 @@ public class GeneralTestsApplication {
 //		stringTest();
 //		stringSubstrTest();
 //		lexSubstrTest();
-		pallindromeTest();
+		try {
+			vanHackTest1.teste() ;
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+//		pallindromeTest();
 	}
 	
 	public List<Integer> oddNumber(Integer l, Integer r) {
