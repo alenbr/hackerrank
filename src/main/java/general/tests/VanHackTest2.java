@@ -40,7 +40,7 @@ class Result2 {
 												    				.ifPresent(dayFree -> {
 																		System.out.println("inv:" + range.getKey() + " " + dayFree);
 																		meetings.add(dayFree);
-												    				});;
+												    				});
 				});
     		System.out.println(meetings.toString());
     		return (int)meetings.stream().filter(idx -> idx > 0).count();
