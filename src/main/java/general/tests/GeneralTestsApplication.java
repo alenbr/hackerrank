@@ -3,6 +3,7 @@ package general.tests;
 import java.lang.reflect.Method;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
@@ -61,8 +62,12 @@ public class GeneralTestsApplication {
 //		stringTest();
 //		stringSubstrTest();
 //		lexSubstrTest();
+
 		try {
-			VanHackTest4.teste() ;
+//			int [] states = {1,0,0,0,0,1,0,0};
+			int [] states = {1,1,1,0,1,1,1,1};
+			cellCompete(states, 2);
+//			VanHackTest4.teste() ;
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		}
@@ -194,5 +199,37 @@ public class GeneralTestsApplication {
 		A = "madam";
 		System.out.println(A.equals(new StringBuilder(A).reverse().toString()) ? "Yes" : "No");
 	}
-
+    public List<Integer> cellCompete(int[] states, int days)
+    {
+        Integer[] result = new Integer[states.length];
+        int cell = 0;   
+        while (cell < states.length) {
+                int previous = 0;
+                int next = 0;
+                if (cell > 0)
+                    previous = states[cell-1];
+                if (cell < states.length-1) 
+                    next = states[cell+1];
+                states[cell] = (previous == next ? 0 : 1);
+                cell+=1;
+        };
+//        while (cell < states.length) {
+//            int previous = 0;
+//            int next = 0;
+//            if (cell >= days)
+//                previous = IntStream.rangeClosed(cell-days,cell).sum();
+//            if (cell < states.length - days) 
+//                next = IntStream.rangeClosed(cell+1,cell+days).sum();
+//            result[cell] = (previous == next ? 0 : 1);
+//            cell+=days;
+//        };
+// i      1,0,0,0,0,1,0,0
+// e     z 0,1,0,0,1,0,1,0
+// i      1,1,1,0,1,1,1,1
+// e      0,0,0,0,0,1,1,0
+        IntStream.range(0, states.length).forEach(i -> System.out.print(states[i] + ","));
+        return Arrays.asList(result);
+    // WRITE YOUR CODE HERE
+    }
+  // MET
 }
